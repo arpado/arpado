@@ -1,0 +1,69 @@
+[
+    {
+        "name": "King's Landing Page",
+        "description": "A simple static landing page for the fictional city of Westeros. Contains a hero section with CTA, a simple contact form with adress, open hours and a map, testimonials and two sections about the hostory and sights of the place. Fully reponsible site with no back-end code.",
+        "image": "kings-landing-page.jpg",
+        "thumbnail": "kings-landing-page-thumbnail.jpg",
+        "size": "6.846.101 bytes",
+        "date": "2022. 08. 06.",
+        "modified": "2022. 08. 06.",
+        "language": "Vue3, Nuxt2",
+        "link": "https://glittering-salmiakki-cac63c.netlify.app/"
+    },
+    {
+        "name": "Pizza Parallax",
+        "description": "A multi-page website for the fictional pizzeria 'PizzaParallax'. The home page features a parallax-effect, there is a menu page with products listing and the possibility to order pizza. There are separate pages for login, registration and password-remainder. Front-end done, back-end and order cart are in development.",
+        "image": "pizza-parallax.jpg",
+        "thumbnail": "pizza-parallax-thumbnail.jpg",
+        "size": "0 kB",
+        "date": "2022. 08. 16.",
+        "modified": "2022. 08. 16.",
+        "language": "Vue3, Nuxt3",
+        "link": ""
+    },
+    {
+        "name": "Suleiman Starship Landing Page",
+        "description": "A single static landing page to encourage buying fictional starship. A play with parallax, depth, Augmented Ui and Swiper. Contains a hero section with CTA, a second section with a carousel integrated in a sci-fi UI. Fully reponsible site with no back-end code. Under contruction.",
+        "image": "suliman.jpg",
+        "thumbnail": "suliman-thumbnail.jpg",
+        "size": "0 kB",
+        "date": "2022. 08. 10.",
+        "modified": "2022. 08. 10.",
+        "language": "Vue3, Nuxt3",
+        "link": "https://chic-starship-abac75.netlify.app/"
+    },
+    {
+        "name": "Rock-Paper-Scissors-Lizard-Spock",
+        "description": "A variant of Ro-Shim-Bo. Click on the token to select it. Can be played by two human players, hot-seat, player2 during the oppoents turn may wish to turn his/her head to avoid seeing what player1 picks.",
+        "image": "rock-paper-scissors-lizard-spock.jpg",
+        "thumbnail": "rock-paper-scissors-lizard-spock-thumbnail.jpg",
+        "size": "1.116.705 bytes",
+        "date": "2022. 05. 08.",
+        "modified": "2022. 09. 01.",
+        "language": "HTML-CSS-JS",
+        "link": ""
+    },
+    {
+        "name": "Catan Dice Tracker and Chance Calculator",
+        "description": "'What was the chance of rolling snake-eyes 5 times during the game?' 'There were less eights than fives during tha match!' 'We have barely had any sevens!' 'I've lost because of bad dicerolls!' No more of these excuses if your using the dice tracker! With this app you can track the dicerolls and compare them to the statistically ideal outcome.",
+        "image": "catan.jpg",
+        "thumbnail": "catan-thumbnail.jpg",
+        "size": "332.781 bytes",
+        "date": "2021. 04. 16.",
+        "modified": "2022. 03. 02.",
+        "language": "HTML-CSS-JS",
+        "link": ""
+        
+    },
+    {
+        "name": "Word Highlighter",
+        "description": "A project made for a friend to help him teach grammar to his student in a more effective manner. Input sentence, set boxes around the words and then set diffenrent background colors on them via a dropdown menu by clicking on them in order to mark them as belonging together.",
+        "image": "wordhighlighter.jpg",
+        "thumbnail": "wordhighlighter-thumbnail.jpg",
+        "size": "0 kB",
+        "date": "2022. 01. 05.",
+        "modified": "2022. 01. 25.",
+        "language": "HTML-CSS-JS",
+        "link": ""
+    }
+]
