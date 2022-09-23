@@ -2,9 +2,9 @@
   <div class="hero-section">
     <div data-augmented-ui="all-hex-alt border" id="hexagon-1"></div>
     <div class="content-box">
-      <div class="text-box flex-c-c"><p>CONTENT.</p></div>
-      <div class="text-box flex-c-c"><p>STYLE.</p></div>
-      <div class="text-box flex-c-c"><p>FUNCTIONALITY.</p></div>
+      <div class="text-box flex-c-c" id="title-box-1"><p>Content.</p></div>
+      <div class="text-box flex-c-c" id="title-box-2"><p>Style.</p></div>
+      <div class="text-box flex-c-c" id="title-box-3"><p>Functionality.</p></div>
       <div class="cta-btn flex-c-c yellow-btn"><p>Get Your Webpage!</p></div>
     </div>
   </div>
@@ -19,7 +19,7 @@ export default {};
 .hero-section {
   width: 100vw;
   height: 100vh; 
-  background-color: black;
+  /* background-color: black; */
   position: relative;
   overflow: hidden;
 }
@@ -43,6 +43,7 @@ export default {};
 }
 .text-box {
     font-size: 3rem;
+    /* line-height: 0; */
 }
 .cta-btn {
     margin-top: 100px;
@@ -68,5 +69,16 @@ export default {};
   --aug-inlay-bg: black;
   --aug-border-bg: yellow;
   --aug-border-all: 60px;
+}
+#title-box-1 {
+  font-family: "EB Garamond";
+}
+#title-box-2 {
+  font-family: "Tangerine";
+  font-size: 4rem;
+}
+#title-box-3 {
+  font-family: "Orbitron";
+  font-size: 2.5rem;
 }
 </style>
