@@ -20,12 +20,12 @@ export default {
 
 <style>
 @import "/node_modules/augmented-ui/augmented-ui.min.css";
+@import "/assets/fonts/fonts.css";
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Times New Roman', Times, serif;
 }
 :root {
   --mainYellow: yellow;
@@ -33,6 +33,12 @@ export default {
 body {
   color: white;
   overflow-x: hidden;
+  font-family: 'Times New Roman', Times, serif;
+  font-family: 'Roboto';
+  text-shadow: 0 0 5px black;
+  background-image: url("https://images.pexels.com/photos/2387793/pexels-photo-2387793.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
+  background-repeat: no-repeat;
+  background-size: contain;
 }
 
 /* general styles */
@@ -40,7 +46,7 @@ body {
 .section-unit {
   width: 100vw;
   height: 100vh;
-  background-color: black;
+  /* background-color: black; */
   position: relative;
   overflow: hidden;
 }
@@ -54,6 +60,7 @@ body {
     background-color: yellow;
     border-radius: 5px;
     transition: 0.25s ease-out;
+    text-shadow: none;
 }
 .yellow-btn:hover {
     cursor: pointer;
