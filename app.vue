@@ -36,9 +36,11 @@ body {
   font-family: 'Times New Roman', Times, serif;
   font-family: 'Roboto';
   text-shadow: 0 0 5px black;
-  background-image: url("https://images.pexels.com/photos/2387793/pexels-photo-2387793.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
+  background: black;
+  background-image: url("/images/black-sand-bg.jpeg");
   background-repeat: no-repeat;
-  background-size: contain;
+  background-size: cover;
+  background-attachment: fixed;
 }
 
 /* general styles */
