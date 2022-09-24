@@ -1,6 +1,6 @@
 <template>
   <div class="story-section">
-    <div class="text-box" id="text-1">
+    <div class="text-box slide-in-from-right" id="text-1">
       <h2>SHARE YOUR THOUGHTS-</h2>
       <br />
       <textarea
@@ -13,7 +13,7 @@
 If you had the chance to say something here, what should it be?"
       ></textarea>
     </div>
-    <div class="text-box" id="text-2">
+    <div class="text-box slide-in-from-left" id="text-2">
       <h2>-WITH STYLE AND GRACE-</h2>
       <br />
       <div>
@@ -84,7 +84,7 @@ If you had the chance to say something here, what should it be?"
     </div>
     <!-- @drag="dragElem" -->
     <div
-      class="text-box"
+      class="text-box slide-in-from-right"
       id="text-3"
       :style="{ right: posRight + '%', top: posTop + '%' }"
       ref="draggableBox"
@@ -110,6 +110,8 @@ If you had the chance to say something here, what should it be?"
 
 <script>
 import gsap from "gsap";
+import ScrollTrigger from "gsap/ScrollTrigger";
+gsap.registerPlugin(ScrollTrigger);
 
 export default {
   data() {
@@ -127,9 +129,9 @@ export default {
         { letter: ".", top: "3", left: "80" },
       ],
       hierarchyHover: false,
-      dragStartPos: { x: 10, y: 0 },
+      dragStartPos: { x: 0, y: 0 },
       dragEndPos: { x: 0, y: 0 },
-      posRight: 10,
+      posRight: -20,
       posTop: 70,
       funcParaVisible: true,
     };
@@ -232,8 +234,31 @@ export default {
     },
   },
   mounted() {
-    // this.dragStartPos.x = this.$refs.draggableBox.style.right
-    // console.log(this.dragStartPos.x)
+     gsap.to("#text-1", {
+      scrollTrigger: {
+        trigger: "#text-1",
+        start: "top 80%"
+        },
+      right: "10%",
+      duration: 3,
+    })
+    gsap.to("#text-2", {
+      scrollTrigger: {
+        trigger: "#text-2",
+        start: "top 80%"
+        },
+      left: "10%",
+      duration: 3,
+    })
+    gsap.to("#text-3", {
+      scrollTrigger: {
+        trigger: "#text-3",
+        start: "top 80%"
+        },
+      right: "10%",
+      duration: 3,
+    })
+    // this.posRight = 10
   },
 };
 </script>
@@ -275,11 +300,11 @@ export default {
 }
 #text-1 {
   top: 10%;
-  right: 10%;
+  right: -20%;
 }
 #text-2 {
   top: 40%;
-  left: 10%;
+  left: -20%;
 }
 #text-3 {
   /* top: 70%; */
