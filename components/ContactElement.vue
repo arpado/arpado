@@ -1,7 +1,7 @@
 <template>
   <div class="contact-section">
     <form
-      class="email-form"
+      class="email-form fade-in"
       action="https://formsubmit.co/2504b17c1cdcf59e3fd818d8e727da33"
       method="POST"
       name="”EmailForm”"
@@ -34,7 +34,7 @@
         Send Message
       </div>
     </form>
-    <div class="about">
+    <div class="about fade-in">
       <h2>About me</h2>
       <hr />
       <h3>Who am I?</h3>
@@ -72,6 +72,10 @@
 </template>
 
 <script>
+import gsap from "gsap";
+import ScrollTrigger from "gsap/ScrollTrigger";
+gsap.registerPlugin(ScrollTrigger);
+
 export default {
   methods: {
     async submitForm() {
@@ -83,6 +87,16 @@ export default {
         this.mainStore.openMessageModal(`Something went wrong Dave: ${error}`);
       }
     },
+  },
+  mounted() {
+    gsap.to('.fade-in', {
+      scrollTrigger: {
+        trigger: ".fade-in",
+        start: "top 80%"
+        },
+      opacity: 1,
+      duration: 3
+    });
   },
 };
 </script>
@@ -114,6 +128,7 @@ export default {
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
+  opacity: 0;
 }
 input,
 textarea {
@@ -149,8 +164,8 @@ hr {
 }
 @media (min-width: 650px) {
   .contact-section {
-  height: 90vh;
-  flex-direction: row;
+    height: 90vh;
+    flex-direction: row;
   }
 }
 @media (min-width: 750px) {
@@ -159,9 +174,9 @@ hr {
   }
 }
 @media (min-width: 850px) {
- .email-form,
-.about {
-  min-width: 300px;
+  .email-form,
+  .about {
+    min-width: 300px;
   }
 }
 </style>

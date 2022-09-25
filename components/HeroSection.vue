@@ -2,17 +2,26 @@
   <div class="hero-section">
     <div data-augmented-ui="all-hex-alt border" id="hexagon-1"></div>
     <div class="content-box">
-      <div class="text-box flex-c-c" id="title-box-1"><p>Content.</p></div>
-      <div class="text-box flex-c-c" id="title-box-2"><p>Style.</p></div>
-      <div class="text-box flex-c-c" id="title-box-3"><p>Functionality.</p></div>
-      <div class="cta-btn flex-c-c yellow-btn"><p>Get Your Webpage!</p></div>
+      <div class="text-box flex-c-c animate-in" id="title-box-1"><p>Content.</p></div>
+      <div class="text-box flex-c-c animate-in " id="title-box-2"><p>Style.</p></div>
+      <div class="text-box flex-c-c animate-in " id="title-box-3"><p>Functionality.</p></div>
+      <div class="cta-btn flex-c-c yellow-btn animate-in"><p>Get Your Webpage!</p></div>
     </div>
   </div>
 </template>
 
 <script>
-// section-unit
-export default {};
+import gsap from 'gsap'
+
+export default {
+  mounted() {
+    gsap.to('.animate-in', {
+      opacity: 1,
+      duration: 2,
+      stagger: 1,
+    })
+  }
+};
 </script>
 
 <style scoped>
@@ -61,6 +70,9 @@ export default {};
 .cta-btn > p {
   text-align: center;
 } */
+.animate-in {
+  opacity: 0;
+}
 #hexagon-1 {
   position: absolute;
   top: 15vh;
