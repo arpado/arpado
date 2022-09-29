@@ -19,7 +19,7 @@
 // section-unit flex-c-c
 import pages from "@/content/webpages.json";
 import gsap from 'gsap';
-import ScrollTrigger from "gsap/ScrollTrigger";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
 export default {
