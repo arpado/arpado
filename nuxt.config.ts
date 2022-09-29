@@ -9,6 +9,9 @@ export default defineNuxtConfig({
   modules: [
     '@pinia/nuxt',
   ],
+  build: {
+    transpile: ['gsap']
+  },
   // build: {
   //     transpile: [
   //         '@fortawesome/vue-fontawesome',
