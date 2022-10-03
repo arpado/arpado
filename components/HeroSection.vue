@@ -1,12 +1,14 @@
 <template>
-  <div class="hero-section">
-    <div data-augmented-ui="all-hex-alt border" id="hexagon-1"></div>
+  <div class="hero-section flex-c-c" id="hero">
     <div class="content-box">
       <div class="text-box flex-c-c animate-in" id="title-box-1"><p>Content.</p></div>
       <div class="text-box flex-c-c animate-in " id="title-box-2"><p>Style.</p></div>
       <div class="text-box flex-c-c animate-in " id="title-box-3"><p>Functionality.</p></div>
-      <div class="cta-btn flex-c-c yellow-btn animate-in"><p>Get Your Webpage!</p></div>
+      <a href="#email-form">
+        <div class="cta-btn flex-c-c yellow-btn animate-in"><p>Get Your Webpage!</p></div>
+      </a>
     </div>
+    <div data-augmented-ui="all-hex-alt border" id="hexagon-1"></div>
   </div>
 </template>
 
@@ -36,13 +38,14 @@ export default {
   width: 500px;
   height: 500px;
   /* border: 1px solid white; */
-  position: absolute;
+  /* position: absolute;
   top: 25%;
-  right: 10%;
+  right: 10%; */
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
+  -webkit-text-stroke: 0.3px black;
 }
 .text-box,
 .cta-btn{
@@ -59,6 +62,7 @@ export default {
     height: 100px;
     width: 200px;
     font-size: 2rem;
+    box-shadow: 0 0 10px 0px black;
     /* color: black;
     background-color: yellow;
     border-radius: 5px; */
@@ -76,11 +80,12 @@ export default {
 #hexagon-1 {
   position: absolute;
   top: 15vh;
-  left: -15rem;
+  left: -25rem;
   --aug-all-width: 80vh;
   --aug-inlay-bg: black;
   --aug-border-bg: yellow;
   --aug-border-all: 60px;
+  z-index: -1;
 }
 #title-box-1 {
   font-family: "EB Garamond";
@@ -92,5 +97,15 @@ export default {
 #title-box-3 {
   font-family: "Orbitron";
   font-size: 2.5rem;
+}
+@media(min-width: 600px) {
+.content-box {
+  position: absolute;
+  top: 25%;
+  right: 10%;
+}
+#hexagon-1 {
+  left: -15rem;
+}
 }
 </style>
