@@ -1,11 +1,19 @@
 <template>
   <div class="hero-section flex-c-c" id="hero">
     <div class="content-box">
-      <div class="text-box flex-c-c animate-in" id="title-box-1"><p>Content.</p></div>
-      <div class="text-box flex-c-c animate-in " id="title-box-2"><p>Style.</p></div>
-      <div class="text-box flex-c-c animate-in " id="title-box-3"><p>Functionality.</p></div>
+      <div class="text-box flex-c-c animate-in" id="title-box-1">
+        <p>Content.</p>
+      </div>
+      <div class="text-box flex-c-c animate-in" id="title-box-2">
+        <p>Style.</p>
+      </div>
+      <div class="text-box flex-c-c animate-in" id="title-box-3">
+        <p>Functionality.</p>
+      </div>
       <a href="#email-form">
-        <div class="cta-btn flex-c-c yellow-btn animate-in"><p>Get Your Webpage!</p></div>
+        <div class="cta-btn flex-c-c yellow-btn animate-in">
+          <p>Get Your Webpage!</p>
+        </div>
       </a>
     </div>
     <div data-augmented-ui="all-hex-alt border" id="hexagon-1"></div>
@@ -13,23 +21,23 @@
 </template>
 
 <script>
-import gsap from 'gsap'
+import gsap from "gsap";
 
 export default {
   mounted() {
-    gsap.to('.animate-in', {
+    gsap.to(".animate-in", {
       opacity: 1,
       duration: 2,
       stagger: 1,
-    })
-  }
+    });
+  },
 };
 </script>
 
 <style scoped>
 .hero-section {
   width: 100vw;
-  height: 100vh; 
+  height: 100vh;
   /* background-color: black; */
   position: relative;
   overflow: hidden;
@@ -48,22 +56,22 @@ export default {
   -webkit-text-stroke: 0.3px black;
 }
 .text-box,
-.cta-btn{
+.cta-btn {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 .text-box {
-    font-size: 3rem;
-    /* line-height: 0; */
+  font-size: 3rem;
+  /* line-height: 0; */
 }
 .cta-btn {
-    margin-top: 100px;
-    height: 100px;
-    width: 200px;
-    font-size: 2rem;
-    box-shadow: 0 0 10px 0px black;
-    /* color: black;
+  margin-top: 100px;
+  height: 100px;
+  width: 200px;
+  font-size: 2rem;
+  box-shadow: 0 0 10px 0px black;
+  /* color: black;
     background-color: yellow;
     border-radius: 5px; */
 }
@@ -98,14 +106,14 @@ export default {
   font-family: "Orbitron";
   font-size: 2.5rem;
 }
-@media(min-width: 600px) {
-.content-box {
-  position: absolute;
-  top: 25%;
-  right: 10%;
-}
-#hexagon-1 {
-  left: -15rem;
-}
+@media (min-width: 600px) {
+  .content-box {
+    position: absolute;
+    top: 25%;
+    right: 10%;
+  }
+  #hexagon-1 {
+    left: -15rem;
+  }
 }
 </style>
