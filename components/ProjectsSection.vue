@@ -1,7 +1,10 @@
 <template>
-  <div class="projects-section">
-    <h2>Some of my projects so far:</h2>
-    <hr />
+  <div class="projects-section" id="projects">
+    <div class="title-container flex-c-c">
+       <h2>Some of my projects so far:</h2>
+      <hr />
+    </div>
+   
     <!-- <transition-group > -->
       <div class="projects-container">
         <ProjectElement
@@ -63,8 +66,15 @@ export default {
   gap: 2rem;
   /* background-color: black; */
 }
+.title-container {
+  width: 100%;
+  flex-direction: column;
+  padding: 1rem;
+  text-align: center;
+}
 hr {
-  width: 25%;
+  width: 50%;
+  margin: 1rem;
 }
 .project-element {
     opacity: 0;
