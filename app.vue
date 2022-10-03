@@ -70,6 +70,7 @@ body {
 }
 a {
   color: yellow;
+  text-decoration-style: none;
 }
 /* general styles */
 
