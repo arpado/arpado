@@ -1,5 +1,5 @@
 <template>
-  <div class="story-section">
+  <div class="story-section" id="story">
     <div class="text-box slide-in-from-right" id="text-1">
       <h2>SHARE YOUR THOUGHTS-</h2>
       <br />
@@ -71,7 +71,15 @@ If you had the chance to say something here, what should it be?"
         >
           Sometimes size does matter.
         </p>
-        <p>Animate, because you can,</p>
+        <transition-group
+          tag="p"
+          id="hopping-box"
+          @mouseenter="hoppingAnimation"
+        >
+          <span v-for="(letter, index) in animate" :key="index" class="hopping-letter">{{
+            letter
+          }}</span></transition-group
+        >
         <p class="color-matters">and don't forget the colours.</p>
         <br />
         <p>Speak before even saying anything.</p>
@@ -95,14 +103,15 @@ If you had the chance to say something here, what should it be?"
       <h2 @click="toggleFuncPara">-AND MAKE IT WORK IN YOUR FAVOUR.</h2>
       <br />
       <div class="func-para-container">
-         <transition name="closeup">
-        <p v-show="funcParaVisible" id="func-para">
-          <!-- Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quia
+        <transition name="closeup">
+          <p v-show="funcParaVisible" id="func-para">
+            <!-- Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quia
           similique optio itaque laudantium perspiciatis provident ipsam saepe
           nemo atque tempore, commodi mollitia explicabo, rem est debitis. -->
-          Drag and drop? Make a paragraph dissapear when you click on the title? 
-        </p>
-      </transition>
+            Drag and drop? Make a paragraph dissapear when you click on the
+            title?
+          </p>
+        </transition>
       </div>
     </div>
   </div>
@@ -128,10 +137,37 @@ export default {
         { letter: "y", top: "3", left: "60" },
         { letter: ".", top: "3", left: "80" },
       ],
+      animate: [
+        "A",
+        "n",
+        "i",
+        "m",
+        "a",
+        "t",
+        "e",
+        ",",
+        "",
+        "b",
+        "e",
+        "c",
+        "a",
+        "u",
+        "s",
+        "e",
+        "",
+        "y",
+        "o",
+        "u",
+        "",
+        "c",
+        "a",
+        "n",
+        ",",
+      ],
       hierarchyHover: false,
       dragStartPos: { x: 0, y: 0 },
       dragEndPos: { x: 0, y: 0 },
-      posRight: -20,
+      posRight: -100,
       posTop: 70,
       funcParaVisible: true,
     };
@@ -203,6 +239,44 @@ export default {
     removeSize() {
       this.$refs.sizeMatters.classList.remove("size-matters-big");
     },
+    hoppingAnimation() {
+      // await gsap.timeline().to('#hopping-box', {
+      //   height: "2rem",
+      //   // duration: 0.5,
+      //   // display: "flex",
+      //   // alignItems: "center"
+      // })
+      // gsap.timeline().to('.hopping-letter', {
+      //   // "margin-bottom": "-0.5rem",
+      //   // opacity: 0,
+      //   // alignSelf: "flex-start",
+      //   // transform: "translateY(25%)",
+      //   // duration: 0.5,
+      //   stagger: 0.2
+      // })
+      gsap.timeline().to('.hopping-letter', {
+        // "margin-top": "1rem",
+        opacity: 0.5,
+        // alignSelf: "flex-end",
+        // transform: "translateY(-50%)",
+        // duration: 0.5,
+        stagger: 0.2,
+        // delay: 0.5
+      })
+      gsap.timeline().to('.hopping-letter', {
+        // "margin-bottom": "-0.5rem",
+        opacity: 1,
+        // alignSelf: "center",
+        // transform: "translateY(25%)",
+        // duration: 0.5,
+        stagger: 0.2,
+        delay: 1
+      })
+      // await gsap.timeline().to('#hopping-box', {
+      //   height: "1rem",
+      //   // display: "initial"
+      // })
+    },
     getDragStart(e) {
       this.dragStartPos.x = e.clientX;
       this.dragStartPos.y = e.clientY;
@@ -233,32 +307,32 @@ export default {
       console.log("poop");
     },
   },
-  mounted() {
-     gsap.to("#text-1", {
+  async mounted() {
+    gsap.to("#text-1", {
       scrollTrigger: {
         trigger: "#text-1",
-        start: "top 80%"
-        },
-      right: "10%",
+        start: "top 80%",
+      },
+      right: "5%",
       duration: 3,
-    })
+    });
     gsap.to("#text-2", {
       scrollTrigger: {
         trigger: "#text-2",
-        start: "top 80%"
-        },
-      left: "10%",
+        start: "top 80%",
+      },
+      left: "5%",
       duration: 3,
-    })
-    gsap.to("#text-3", {
+    });
+    await gsap.to("#text-3", {
       scrollTrigger: {
         trigger: "#text-3",
-        start: "top 80%"
-        },
-      right: "10%",
+        start: "top 80%",
+      },
+      right: "5%",
       duration: 3,
-    })
-    // this.posRight = 10
+    });
+    this.posRight = 5;
   },
 };
 </script>
@@ -289,9 +363,10 @@ export default {
 }
 .story-section {
   width: 100vw;
-  height: 100vh;
+  height: 125vh;
   background-color: black;
   position: relative;
+  overflow: hidden;
 }
 .text-box {
   font-size: 1rem;
@@ -300,16 +375,15 @@ export default {
 }
 #text-1 {
   top: 10%;
-  right: -20%;
+  right: -100%;
 }
 #text-2 {
   top: 40%;
-  left: -20%;
+  left: -100%;
 }
-#text-3 {
-  /* top: 70%; */
-  /* right: 10%; */
-  /* position: fixed; */
+#text-2:hover,
+#text-3:hover {
+  cursor: pointer;
 }
 textarea {
   font-family: "Roboto";
@@ -334,14 +408,14 @@ textarea::placeholder {
 }
 #harmony-1 {
   transition: all 2s ease-in;
-  opacity: 0;
+  opacity: 1;
 }
 #harmony-2 {
   transition: all 2s ease-in;
   position: absolute;
   bottom: 0;
   left: 0;
-  opacity: 1;
+  opacity: 0;
   font-family: "Tangerine";
   font-size: 1.7rem;
   font-weight: 700;
@@ -358,7 +432,11 @@ textarea::placeholder {
   transition: all 2s ease;
 }
 .size-matters-big {
-  font-size: 1.5rem;
+  font-size: 1.4rem;
+}
+.hopping-letter {
+  display: inline-block;
+  min-width: 0.3rem;
 }
 .color-matters:hover {
   color: yellow;
@@ -434,4 +512,9 @@ textarea::placeholder {
   top: 75%;
   left: 6.5rem;
 }*/
+@media (min-width: 1000px) {
+  .story-section {
+    height: 100vh;
+  }
+}
 </style>

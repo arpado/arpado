@@ -4,7 +4,6 @@
        <h2>Some of my projects so far:</h2>
       <hr />
     </div>
-   
     <!-- <transition-group > -->
       <div class="projects-container">
         <ProjectElement
