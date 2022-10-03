@@ -1,10 +1,19 @@
 <template>
   <div class="footer-container">
     <div class="link-bar">
-      <font-awesome-icon icon="fa-brands fa-facebook-f" />
-      <font-awesome-icon icon="fa-brands fa-linkedin-in" />
-      <font-awesome-icon icon="fa-brands fa-google-plus-g" />
-      <font-awesome-icon icon="fa-brands fa-github" />
+      <!-- <a href="facebook.com">
+        <font-awesome-icon icon="fa-brands fa-facebook-f" />
+      </a> -->
+      <a
+        href="https://www.linkedin.com/in/%C3%A1rp%C3%A1d-ozsv%C3%A1r-774482251/"
+        target="_blank"
+      >
+        <font-awesome-icon icon="fa-brands fa-linkedin-in" />
+      </a>
+      <!-- <font-awesome-icon icon="fa-brands fa-google-plus-g" /> -->
+      <a href="https://github.com/arpado" target="_blank">
+        <font-awesome-icon icon="fa-brands fa-github" />
+      </a>
       <!-- <font-awesome-icon :icon="['fa', 'facebook-f']" class="icon alt"/> -->
       <!-- <font-awesome-icon :icon="['fab', 'github']" class="icon alt"/> -->
       <!-- <a href=""><img class="icon" src="/assets/font-awesome/github.svg" alt=""></a> -->
