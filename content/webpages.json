@@ -19,7 +19,7 @@
         "date": "2022. 08. 16.",
         "modified": "2022. 08. 16.",
         "language": "Vue3, Nuxt3",
-        "link": ""
+        "link": "https://pizza-parallax.pages.dev/"
     },
     {
         "name": "Suleiman Starship Landing Page",
@@ -41,7 +41,7 @@
         "date": "2022. 05. 08.",
         "modified": "2022. 09. 01.",
         "language": "HTML-CSS-JS",
-        "link": ""
+        "link": "https://rock-paper-scissors-lizard-spock.pages.dev/"
     },
     {
         "name": "Catan Dice Tracker and Chance Calculator",
@@ -52,7 +52,7 @@
         "date": "2021. 04. 16.",
         "modified": "2022. 03. 02.",
         "language": "HTML-CSS-JS",
-        "link": ""
+        "link": "https://catan-dice-tracker.pages.dev/"
         
     },
     {
@@ -64,6 +64,6 @@
         "date": "2022. 01. 05.",
         "modified": "2022. 01. 25.",
         "language": "HTML-CSS-JS",
-        "link": ""
+        "link": "https://word-highlighter.pages.dev/"
     }
 ]
