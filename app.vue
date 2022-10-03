@@ -9,19 +9,14 @@
       <FooterElement />
       <ModalView />
     </div>
-      <!-- <div > -->
     <transition name="fade" mode="in-out">
         <LoaderElement class="loader" v-if="!pageLoaded" />
     </transition>
-      <!-- </div> -->
   </div>
 </template>
 
 <script>
 import gsap from "gsap";
-// import { faFacebook, faTwitter } from '@fortawesome/free-brands-svg-icons'
-// name="loader-fade">
-// @before-leave="loaderLeave"
 
 export default {
   data() {
@@ -43,7 +38,6 @@ export default {
     },
   },
   mounted() {
-    // this.loaderLeave('.loader');
     this.pageLoaded = true;
   },
 };
