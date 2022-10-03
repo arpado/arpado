@@ -62,6 +62,7 @@ img {
 .modal-content-box {
   width: 80%;
   height: 80%;
+  overflow-x: auto;
   /* display: grid;
   grid-template-rows: repeat(12, 1fr);
   grid-template-columns: repeat(12, 1fr);
