@@ -61,7 +61,7 @@ export default {
 <style scoped>
 .project-card {
   width: 30%;
-  min-width: 350px;
+  min-width: 300px;
   height: 200px;
   position: relative;
   overflow: hidden;
