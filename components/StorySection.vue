@@ -108,8 +108,9 @@ If you had the chance to say something here, what should it be?"
             <!-- Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quia
           similique optio itaque laudantium perspiciatis provident ipsam saepe
           nemo atque tempore, commodi mollitia explicabo, rem est debitis. -->
-            Drag and drop? Make a paragraph dissapear when you click on the
+            Maybe you want to drag and drop elemnets? Or make a paragraph appear-dissapear when you click on the
             title?
+            Static websites are boring. Interactive websites are fun. And really useful websites work for you.
           </p>
         </transition>
       </div>
