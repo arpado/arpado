@@ -71,6 +71,7 @@ export default {
   width: 200px;
   font-size: 2rem;
   box-shadow: 0 0 10px 0px black;
+  text-decoration-style: none;
   /* color: black;
     background-color: yellow;
     border-radius: 5px; */
