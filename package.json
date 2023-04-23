@@ -8,7 +8,8 @@
     "postinstall": "nuxt prepare"
   },
   "devDependencies": {
-    "nuxt": "3.0.0-rc.9"
+    "@nuxtjs/tailwindcss": "^6.6.6",
+    "nuxt": "^3.0.0-rc.14"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.2.0",
@@ -16,10 +17,14 @@
     "@fortawesome/free-regular-svg-icons": "^6.2.0",
     "@fortawesome/free-solid-svg-icons": "^6.2.0",
     "@fortawesome/vue-fontawesome": "^3.0.1",
-    "@nuxtjs/composition-api": "^0.33.1",
     "@pinia/nuxt": "^0.4.2",
+    "@vueuse/core": "^10.0.2",
     "augmented-ui": "^2.0.0",
+    "dat.gui": "^0.7.9",
     "gsap": "^3.11.1",
-    "pinia": "^2.0.22"
+    "nuxt3": "^3.4.2-28026172.8aa86559",
+    "swiper": "^9.2.4",
+    "three": "^0.151.3",
+    "vite-plugin-string": "^1.2.1"
   }
 }

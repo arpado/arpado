@@ -3,14 +3,16 @@
     <div class="maim-container" v-if="pageLoaded">
       <VerticalMenu />
       <HeroSection />
-      <StorySection />
+      <!-- <ClientOnly>
+        <StorySection />
+      </ClientOnly> -->
       <ProjectsSection />
       <ContactElement />
       <FooterElement />
       <ModalView />
     </div>
     <transition name="fade" mode="in-out">
-        <LoaderElement class="loader" v-if="!pageLoaded" />
+      <LoaderElement class="loader" v-if="!pageLoaded" />
     </transition>
   </div>
 </template>
@@ -26,15 +28,15 @@ export default {
   },
   methods: {
     loaderLeave(el) {
-      console.log(el)
+      console.log(el);
       gsap.to(el, done, {
         opacity: 0,
         duration: 1,
-        done: this.setPageLoad
-      })
+        done: this.setPageLoad,
+      });
     },
     setPageLoad() {
-      this.pageLoaded = true
+      this.pageLoaded = true;
     },
   },
   mounted() {
@@ -63,10 +65,12 @@ body {
   font-family: "Roboto";
   text-shadow: 0 0 5px black;
   background: black;
-  background-image: url("/images/black-sand-bg.jpeg");
+  background-image: url("/src/images/bg-stars.jpg");
+  /* background-image: url("/images/black-sand-bg.jpeg"); */
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
+  background-position: center;
 }
 a {
   color: yellow;

@@ -1,22 +1,26 @@
 <template>
-  <div class="hero-section flex-c-c" id="hero">
-    <div class="content-box">
-      <div class="text-box flex-c-c animate-in" id="title-box-1">
-        <p>Content.</p>
+  <div class="hero-section h-screen w-screen relative" id="hero">
+    <!-- <div class="content-box" data-augmented-ui="tl-round br-round border both">
+      <h1 class="text-4xl">
+        Transforming ideas<br />into<br />digital experiences.
+      </h1>
+      <p>
+        Hi there!<br />I'm a passionate beginner web developer eager to bring your
+        ideas to life. I specialize in creating responsive, user-friendly
+        websites that are both visually appealing and functional. Whether you're
+        looking to establish your online presence, improve your website's
+        performance, or bring a new project to life, I'm committed to working
+        closely with you to understand your unique needs and deliver a product
+        that exceeds your expectations.<br />Let's build something great together!
+      </p>
+      <div
+        class="cta-btn text-3xl p-4"
+        data-augmented-ui="tl-round br-round border both"
+      >
+        Learn More
       </div>
-      <div class="text-box flex-c-c animate-in" id="title-box-2">
-        <p>Style.</p>
-      </div>
-      <div class="text-box flex-c-c animate-in" id="title-box-3">
-        <p>Functionality.</p>
-      </div>
-      <a href="#email-form">
-        <div class="cta-btn flex-c-c yellow-btn animate-in">
-          <p>Get Your Webpage!</p>
-        </div>
-      </a>
-    </div>
-    <div data-augmented-ui="all-hex-alt border" id="hexagon-1"></div>
+    </div> -->
+    <PlanetSection />
   </div>
 </template>
 
@@ -25,48 +29,61 @@ import gsap from "gsap";
 
 export default {
   mounted() {
-    gsap.to(".animate-in", {
-      opacity: 1,
-      duration: 2,
-      stagger: 1,
-    });
+    // gsap.to(".animate-in", {
+    //   opacity: 1,
+    //   duration: 2,
+    //   stagger: 1,
+    // });
   },
 };
 </script>
 
 <style scoped>
 .hero-section {
-  width: 100vw;
-  height: 100vh;
+  /* width: 100vw;
+  height: 100vh; */
   /* background-color: black; */
-  position: relative;
+  /* position: relative; */
   overflow: hidden;
 }
 .content-box {
   width: 500px;
   height: 500px;
+  max-width: 80vw;
+  /* max-height: fit-content; */
   /* border: 1px solid white; */
-  /* position: absolute;
-  top: 25%;
-  right: 10%; */
+  position: absolute;
+  top: 50%;
+  left: 0%;
+  transform: translate(25%, -50%);
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
-  align-items: center;
+  align-items: flex-start;
   -webkit-text-stroke: 0.3px black;
+  z-index: 9;
+  padding: 2rem;
+  /* --aug-border-bottom: 20px;
+  --aug-br-inset1: 200px;
+  --aug-br-inset2: 10px;
+  --aug-br: 20px;
+  --aug-inlay-all: 10px; */
 }
 .text-box,
 .cta-btn {
   display: flex;
   justify-content: center;
   align-items: center;
+  /* padding: 2rem 0.5rem; */
 }
 .text-box {
   font-size: 3rem;
   /* line-height: 0; */
 }
 .cta-btn {
-  margin-top: 100px;
+  /* margin-top: 100px; */
   height: 100px;
   width: 200px;
   font-size: 2rem;
@@ -108,11 +125,11 @@ export default {
   font-size: 2.5rem;
 }
 @media (min-width: 600px) {
-  .content-box {
+  /* .content-box {
     position: absolute;
     top: 25%;
     right: 10%;
-  }
+  } */
   #hexagon-1 {
     left: -15rem;
   }
