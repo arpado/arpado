@@ -95,10 +95,10 @@ const textureLoader = new TextureLoader();
 // scene.add(helperPlane)
 // helperPlane.rotation.x = -0.5 * Math.PI;
 
-// const grid = new GridHelper(10)
-// scene.add(grid)
-// const axesHelper = new AxesHelper( 5 );
-// scene.add( axesHelper );
+const grid = new GridHelper(10)
+scene.add(grid)
+const axesHelper = new AxesHelper( 5 );
+scene.add( axesHelper );
 
 
 
@@ -154,11 +154,13 @@ const atmosphere = new Mesh(
 atmosphere.scale.set(1.1, 1.1, 1.1);
 scene.add(atmosphere);
 
-
 // planetGroup.position.x += 1;
 // atmosphere.position.x += 1;
 // planetGroup.position.z += -1;
 // atmosphere.position.z += -1;
+
+
+// OTHER STUFF
 
 // const dodecahedron = new Mesh(
 //   new DodecahedronGeometry(1, 0),
@@ -173,8 +175,6 @@ scene.add(atmosphere);
 // const cubeTextureLoader = new CubeTextureLoader();
 // scene.add(box);
 // box.position.set(2, 0, 0)
-
-// test
 
 // function createCanvas() {
 //   const canvas = document.createElement('canvas')
@@ -196,6 +196,7 @@ scene.add(atmosphere);
 // scene.add(box2);
 // box2.position.set(-2, 0, 0)
 
+// END OF OTHER STUFF
 
 // GUI
 // const gui = new dat.GUI()
@@ -233,10 +234,10 @@ function setRenderer() {
 
     updateRenderer();
 
-    // orbit = new OrbitControls(camera, canvasElement.value);
-    // orbit.minDistance = 1;
-    // orbit.maxDistance = 15;
-    // orbit.update();
+    orbit = new OrbitControls(camera, canvasElement.value);
+    orbit.minDistance = 1;
+    orbit.maxDistance = 15;
+    orbit.update();
   }
 }
 
