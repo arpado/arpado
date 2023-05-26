@@ -2,14 +2,15 @@
   <a
     class="wrapper"
     :href="button.href"
-    :style="{ transform: `translateY(${index * 50 + 50}px)` }"
     @click="$emit('closeMenu')"
   >
-    <p>{{ button.name }}</p>
+    <span>{{ button.name }}</span>
   </a>
 </template>
 
 <script>
+    // :style="{ transform: `translateY(${(index * 70) + 70}px)` }"
+// 
 // data-augmented-ui="
 //   bl-clip-x br-clip-x t-clip-x both
 // "
@@ -24,9 +25,11 @@ export default {
   position: absolute;
   right: 0;
   text-decoration: none;
-  color: yellow;
+  color:var(--mainYellow);
   height: 50px;
   width: 150px;
+  /* padding: 10px; */
+  /* margin-top: 10px; */
   font-size: 2rem;
   background-color: rgba(0,0,0,0.9);
   display: flex;
