@@ -1,4 +1,5 @@
-# Nuxt 3 Minimal Starter
+# Under Development...
+<!-- # Nuxt 3 Minimal Starter
 
 Look at the [nuxt 3 documentation](https://v3.nuxtjs.org) to learn more.
 
@@ -40,3 +41,4 @@ npm run preview
 ```
 
 Checkout the [deployment documentation](https://v3.nuxtjs.org/guide/deploy/presets) for more information.
+ -->
