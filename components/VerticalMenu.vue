@@ -1,19 +1,19 @@
 <template>
-  <div class="container">
+  <div class="container menu">
     <transition-group
-      @enter="enter"
-      @afterEnter="afterEnter"
-      @leave="onLeave"
+      @enter="mainStore.enter"
+      @afterEnter="mainStore.afterEnter"
+      @leave="mainStore.onLeave"
       
     >
       <NavButtonVertical
-        v-show="menuVisible"
-        v-for="(button, index) in buttons"
+        v-show="mainStore.menuVisible"
+        v-for="(button, index) in mainStore.buttons"
         :key="button.name"
         :button="button"
         :index="index"
         :data-index="index"
-        @close-menu="toggleMenu"
+        @close-menu="mainStore.toggleMenu"
       />
     </transition-group>
     <!-- <div
@@ -32,7 +32,7 @@
      <div
       class="btn-toggle-menu"
       
-      @click="toggleMenu"
+      @click="mainStore.toggleMenu"
     >
       <div class="hamb-bar" id="hamb-bar-top"></div>
       <div class="hamb-bar" id="hamb-bar-middle"></div>
@@ -42,86 +42,92 @@
 </template>
 
 <script>
-import gsap from "gsap";
+// import gsap from "gsap";
+import { useMainStore } from '@/stores/mainStore.js'
 
 export default {
+  setup() {
+    const mainStore = useMainStore()
+    return { mainStore }
+  },
   data() {
     return {
-      buttons: [
-        {
-          name: "Hero",
-          href: "#hero",
-        },
-        {
-          name: "Story",
-          href: "#story",
-        },
-        {
-          name: "Projects",
-          href: "#projects",
-        },
-        {
-          name: "Message",
-          href: "#email-form",
-        },
-        {
-          name: "About",
-          href: "#about",
-        },
-      ],
-      menuVisible: false,
+      // buttons: [
+      //   {
+      //     name: "Hero",
+      //     href: "#hero",
+      //   },
+
+      //   {
+      //     name: "Projects",
+      //     href: "#projects",
+      //   },
+      //   {
+      //     name: "Message",
+      //     href: "#email-form",
+      //   },
+      //   {
+      //     name: "About",
+      //     href: "#about",
+      //   },
+      //   {
+      //     name: "FAQ",
+      //     href: "#faq",
+      //   },
+      // ],
+      // menuVisible: false,
       // barsRotated: false,
     };
   },
   methods: {
-    toggleMenu() {
-      this.menuVisible = !this.menuVisible;
-      // this.barsRotated = !this.barsRotated;
-      if (this.menuVisible) {
-        gsap.to('#hamb-bar-top', {
-          transform: 'translate3D(0px, 16.5px, 0px) rotateZ(45deg)'
-        })
-        gsap.to('#hamb-bar-middle', {
-          transform: 'rotateZ(45deg)'
-        })
-        gsap.to('#hamb-bar-bottom', {
-          transform: 'translate3D(0px, -16.5px, 0px) rotateZ(-45deg)'
-        })
-        gsap.to('.hamb-bar', {
-          backgroundColor: 'yellow'
-        })
-      }
-      else {
-        gsap.to('#hamb-bar-top', {
-          transform: 'translate3D(0px, 0px, 0px) rotateZ(0deg)'
-        })
-         gsap.to('#hamb-bar-middle', {
-          transform: 'rotateZ(0deg)'
-        })
-         gsap.to('#hamb-bar-bottom', {
-          transform: 'translate3D(0px, 0px, 0px) rotateZ(0deg)'
-        })
-        gsap.to('.hamb-bar', {
-          backgroundColor: 'white'
-        })
-      }
-    },
-    enter(el) {
-      el.style.transform = `translateY(-${el.dataset.index * 50 + 150}px)`;
-    },
-    afterEnter(el, done) {
-      gsap.to(el, {
-        transform: `translateY(${el.dataset.index * 50 + 50}px)`,
-        delay: el.dataset.index * 0.2,
-      });
-    },
-    onLeave(el, done) {
-      gsap.to(el, {
-        transform: `translateY(-${el.dataset.index * 50 + 150}px)`,
-        delay: (this.buttons.length - el.dataset.index) * 0.2 - 0.2,
-        onComplete: done,
-      });
-    },
+    // toggleMenu() {
+    //   this.mainStore.menuVisible = !this.mainStore.menuVisible;
+    //   // this.barsRotated = !this.barsRotated;
+    //   if (this.mainStore.menuVisible) {
+    //     gsap.to('#hamb-bar-top', {
+    //       transform: 'translate3D(0px, 16.5px, 0px) rotateZ(45deg)'
+    //     })
+    //     gsap.to('#hamb-bar-middle', {
+    //       transform: 'rotateZ(45deg)'
+    //     })
+    //     gsap.to('#hamb-bar-bottom', {
+    //       transform: 'translate3D(0px, -16.5px, 0px) rotateZ(-45deg)'
+    //     })
+    //     gsap.to('.hamb-bar', {
+    //       backgroundColor: 'var(--mainYellow)'
+    //     })
+    //   }
+    //   else {
+    //     gsap.to('#hamb-bar-top', {
+    //       transform: 'translate3D(0px, 0px, 0px) rotateZ(0deg)'
+    //     })
+    //      gsap.to('#hamb-bar-middle', {
+    //       transform: 'rotateZ(0deg)'
+    //     })
+    //      gsap.to('#hamb-bar-bottom', {
+    //       transform: 'translate3D(0px, 0px, 0px) rotateZ(0deg)'
+    //     })
+    //     gsap.to('.hamb-bar', {
+    //       backgroundColor: 'white'
+    //     })
+    //   }
+    // },
+    // enter(el) {
+    //   el.style.transform = `translateY(-${el.dataset.index * 50 + 150}px)`;
+    // },
+    // afterEnter(el, done) {
+    //   gsap.to(el, {
+    //     transform: `translateY(${el.dataset.index * 50 + 70}px)`,
+    //     delay: el.dataset.index * 0.2,
+    //   });
+    // },
+    // onLeave(el, done) {
+    //   gsap.to(el, {
+    //     transform: `translateY(-${el.dataset.index * 50 + 150}px)`,
+    //     delay: (this.mainStore.buttons.length - el.dataset.index) * 0.2 - 0.2,
+    //     onComplete: done,
+    //   });
+    // },
   },
 };
 </script>
@@ -130,9 +136,9 @@ export default {
 .container {
   height: fit-content;
   width: fit-content;
-  top: 10px;
-  right: 20px;
-  position: fixed;
+  /* top: 10px;
+  right: 20px;*/
+  position: relative; 
   z-index: 999;
 }
 .btn-toggle-menu {
@@ -142,10 +148,10 @@ export default {
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
-  position: fixed;
+  /* position: fixed; */
   color: white;
-  top: 10px;
-  right: 30px;
+  /* top: 10px;
+  right: 30px; */
   /* --aug-bl-inset2: 30%;
   --aug-br-inset1: 30%; */
 }
