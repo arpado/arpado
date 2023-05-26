@@ -1,4 +1,4 @@
-import { defineNuxtConfig } from 'nuxt'
+// import { defineNuxtConfig } from 'nuxt/config'
 
 // https://v3.nuxtjs.org/api/configuration/nuxt.config
 export default defineNuxtConfig({
@@ -8,10 +8,22 @@ export default defineNuxtConfig({
   ],
   modules: [
     '@pinia/nuxt',
+    '@nuxtjs/tailwindcss',
+    '@vueuse/nuxt',
+    '@nuxt/content',
+    '@nuxtjs/fontaine'
   ],
   build: {
     transpile: ['gsap']
   },
+  alias: {
+    pinia: "/node_modules/@pinia/nuxt/node_modules/pinia/dist/pinia.mjs"
+  },
+  content: {
+    markdown: {
+      anchorLinks: false
+    }
+  }
   // build: {
   //     transpile: [
   //         '@fortawesome/vue-fontawesome',
@@ -30,3 +42,8 @@ export default defineNuxtConfig({
   //     }
   //    }
 })
+
+// removed from package.json
+// "@nuxtjs/composition-api": "^0.33.1",
+// "pinia": "^2.0.22",
+

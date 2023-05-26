@@ -1,5 +1,5 @@
 <template>
-    <div class="container flex-c-c">
+    <div class="loader-container flex-c-c">
       <div data-augmented-ui="all-hex-alt border" id="hexagon-loader"></div>
     </div>
 </template>
@@ -21,7 +21,7 @@ export default {
 </script>
 
 <style scoped>
-.container {
+.loader-container {
   width: 100vw;
   height: 100vh;
   background-color: black;

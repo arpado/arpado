@@ -1,4 +1,6 @@
 import { defineStore } from 'pinia';
+import gsap from "gsap";
+
 
 export const useMainStore = defineStore('MainStore', {
     state: () => {
@@ -11,6 +13,32 @@ export const useMainStore = defineStore('MainStore', {
             modalContent: null,
             showMessage: false,
             modalMessage: '',
+
+
+            menuVisible: false,
+            buttons: [
+                {
+                  name: "Hero",
+                  href: "#hero",
+                },
+        
+                {
+                  name: "Projects",
+                  href: "#projects",
+                },
+                {
+                  name: "Message",
+                  href: "#email-form",
+                },
+                {
+                  name: "About",
+                  href: "#about",
+                },
+                {
+                  name: "FAQ",
+                  href: "#faq",
+                },
+              ],
         }
     },
     actions: {
@@ -63,6 +91,66 @@ export const useMainStore = defineStore('MainStore', {
         },
         test() {
             console.log('poop')
-        }
+        },
+        onClickOutside(event) {
+            const menu = document.querySelector('.menu')
+            if (menu && !menu.contains(event.target)) {
+              this.toggleMenu()
+            }
+          },
+        toggleMenu() {
+            this.menuVisible = !this.menuVisible;
+
+            if (this.menuVisible) {
+              gsap.to('#hamb-bar-top', {
+                transform: 'translate3D(0px, 16.5px, 0px) rotateZ(45deg)'
+              })
+              gsap.to('#hamb-bar-middle', {
+                transform: 'rotateZ(45deg)'
+              })
+              gsap.to('#hamb-bar-bottom', {
+                transform: 'translate3D(0px, -16.5px, 0px) rotateZ(-45deg)'
+              })
+              gsap.to('.hamb-bar', {
+                backgroundColor: 'var(--mainYellow)'
+              })
+              window.addEventListener('click', this.onClickOutside)
+            }
+            else {
+              gsap.to('#hamb-bar-top', {
+                transform: 'translate3D(0px, 0px, 0px) rotateZ(0deg)'
+              })
+               gsap.to('#hamb-bar-middle', {
+                transform: 'rotateZ(0deg)'
+              })
+               gsap.to('#hamb-bar-bottom', {
+                transform: 'translate3D(0px, 0px, 0px) rotateZ(0deg)'
+              })
+              gsap.to('.hamb-bar', {
+                backgroundColor: 'white'
+              })
+              window.removeEventListener('click', this.onClickOutside)
+            }
+          },
+          enter(el) {
+            el.style.transform = `translateY(-${el.dataset.index * 50 + 150}px)`;
+          },
+          afterEnter(el, done) {
+            gsap.to(el, {
+              transform: `translateY(${el.dataset.index * 50 + 70}px)`,
+              delay: el.dataset.index * 0.2,
+            });
+          },
+          onLeave(el, done) {
+            //   console.log((this.buttons.length - el.dataset.index) * 0.2 - 0.2)
+            gsap.to(el, {
+              transform: `translateY(-${el.dataset.index * 50 + 150}px)`,
+              delay: (this.buttons.length - el.dataset.index) * 0.2 - 0.2,
+            // delay: el.dataset.index * 0.2, 
+            // duration: 10, 
+            // stagger: 1,
+              onComplete: done,
+            });
+          },
     },
 })
