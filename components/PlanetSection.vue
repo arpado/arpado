@@ -20,6 +20,7 @@ import {
   PerspectiveCamera,
   AmbientLight,
   DirectionalLight,
+  PointLight,
   Mesh,
   MeshStandardMaterial,
   ShaderMaterial,
@@ -34,7 +35,7 @@ import {
   WebGLRenderer,
   AdditiveBlending,
   BackSide,
-  Group
+  Group,
 } from "three";
 import { OrbitControls } from "three/addons/controls/OrbitControls.js";
 // import { dat } from 'dat.gui'
@@ -49,8 +50,8 @@ import moonMap from "@/src/images/moon-map.jpg";
 // import { Ref } from "vue";
 import vertexShader from "@/composables/shaders/vertex.glsl";
 import fragmentShader from "@/composables/shaders/fragment.glsl";
-import atmosphereVertexShader from '@/composables/shaders/atmosphereVertex.glsl'
-import atmosphereFragmentShader from '@/composables/shaders/atmosphereFragment.glsl'
+import atmosphereVertexShader from "@/composables/shaders/atmosphereVertex.glsl";
+import atmosphereFragmentShader from "@/composables/shaders/atmosphereFragment.glsl";
 
 const canvasElement = ref(null);
 const scene = new Scene();
@@ -58,7 +59,7 @@ let renderer = null;
 let orbit = null;
 let pointerPos = {
   x: 0,
-  y: 0
+  y: 0,
 };
 
 const { width, height } = useWindowSize();
@@ -81,11 +82,21 @@ scene.add(camera);
 // scene.add(ambientLight);
 
 // const directionalLight = new DirectionalLight(0xffffff, 0.8)
+// directionalLight.castShadow = true;
 // scene.add(directionalLight)
-// directionalLight.position.set(0, 1, 0)
+// directionalLight.position.set(6, 0, 0)
+// directionalLight.shadow.mapSize.width = 512; // default
+// directionalLight.shadow.mapSize.height = 512; // default
+// directionalLight.shadow.camera.near = 0.5; // default
+// directionalLight.shadow.camera.far = 500; // default
 // const helper = new DirectionalLightHelper( directionalLight, 5 );
 // scene.add( helper );
 
+// const light = new PointLight( 0xff0000, 1, 10, 10 );
+// light.position.set( 6, 0, 0 );
+// scene.add( light );
+// const helper = new  PointLightHelper( PointLight, 5 );
+// scene.add( helper );
 // BODIES
 const textureLoader = new TextureLoader();
 
@@ -95,16 +106,14 @@ const textureLoader = new TextureLoader();
 // scene.add(helperPlane)
 // helperPlane.rotation.x = -0.5 * Math.PI;
 
-const grid = new GridHelper(10)
-scene.add(grid)
-const axesHelper = new AxesHelper( 5 );
-scene.add( axesHelper );
-
-
+// const grid = new GridHelper(10)
+// scene.add(grid)
+// const axesHelper = new AxesHelper( 5 );
+// scene.add( axesHelper );
 
 const planet = new Mesh(
-  new SphereGeometry(0.75, 50, 50),
-  // new MeshBasicMaterial({ color: 0x008080, map: textureLoader.load(earth) }),
+  new SphereGeometry(0.75, 20, 20),
+  // new MeshStandardMaterial({ color: 0x008080, /* map: textureLoader.load(earth) */ }),
   new ShaderMaterial({
     vertexShader,
     fragmentShader,
@@ -117,15 +126,19 @@ const planet = new Mesh(
 );
 // scene.add(planet);
 
-const planetGroup = new Group()
-const masterGroup = new Group()
-planetGroup.add(planet)
+const planetGroup = new Group();
+const masterGroup = new Group();
+planetGroup.add(planet);
 masterGroup.add(planetGroup);
-scene.add(masterGroup)
+scene.add(masterGroup);
+// planet.castShadow = true;
+// planet.receiveShadow = true;
 
 const moon = new Mesh(
-  new SphereGeometry(0.15, 20, 20),
-  new MeshBasicMaterial({ color: 0x008080, map: textureLoader.load(moonMap) }),
+  new SphereGeometry(0.15, 10, 10),
+  new MeshBasicMaterial({
+    /*color: 0x008080,*/ map: textureLoader.load(moonMap),
+  })
   // new ShaderMaterial({
   //   vertexShader,
   //   fragmentShader,
@@ -136,11 +149,13 @@ const moon = new Mesh(
   //   },
   // })
 );
-planetGroup.add(moon)
+planetGroup.add(moon);
 moon.position.x = 3;
+// moon.castShadow = true;
+// moon.receiveShadow = true;
 
 const atmosphere = new Mesh(
-  new SphereGeometry(0.75, 50, 50),
+  new SphereGeometry(0.75, 20, 20),
   // new MeshBasicMaterial({ color: 0x008080, map: textureLoader.load(earth) }),
   new ShaderMaterial({
     // uniforms: uniforms,
@@ -154,11 +169,10 @@ const atmosphere = new Mesh(
 atmosphere.scale.set(1.1, 1.1, 1.1);
 scene.add(atmosphere);
 
-// planetGroup.position.x += 1;
-// atmosphere.position.x += 1;
+// planetGroup.position.x = 1;
+// atmosphere.position.x = 1;
 // planetGroup.position.z += -1;
 // atmosphere.position.z += -1;
-
 
 // OTHER STUFF
 
@@ -215,8 +229,8 @@ scene.add(atmosphere);
 // RENDER FUNCTIONS
 
 function updateRenderer() {
-// WIDTH CHANGED TO *1.5 SIZE TO PUSH THE PLANET ASIDE!
-  renderer.setSize((width.value * 1.5), height.value);
+  // WIDTH CHANGED TO *1.5 SIZE TO PUSH THE PLANET ASIDE!
+  renderer.setSize(width.value * 1.5, height.value);
   renderer.setPixelRatio(window.devicePixelRatio);
   renderer.render(scene, camera);
 }
@@ -231,20 +245,20 @@ function setRenderer() {
       alpha: true,
       antialias: true,
     });
+    // renderer.shadowMap.enabled = true
 
     updateRenderer();
 
-    orbit = new OrbitControls(camera, canvasElement.value);
-    orbit.minDistance = 1;
-    orbit.maxDistance = 15;
-    orbit.update();
+    // orbit = new OrbitControls(camera, canvasElement.value);
+    // orbit.minDistance = 1;
+    // orbit.maxDistance = 15;
+    // orbit.update();
   }
 }
 
-
 function rotatePlanet() {
-  pointerPos.x = (event.clientX / innerWidth) * 2 -1;
-  pointerPos.y = -(event.clientY / innerHeight) * 2 +1;
+  pointerPos.x = (event.clientX / innerWidth) * 2 - 1;
+  pointerPos.y = -(event.clientY / innerHeight) * 2 + 1;
 }
 onMounted(() => {
   setRenderer();
@@ -252,12 +266,12 @@ onMounted(() => {
 });
 const animate = () => {
   planet.rotation.y += 0.02;
-  planetGroup.rotation.y += 0.02
+  planetGroup.rotation.y += 0.02;
   gsap.to(masterGroup.rotation, {
     y: pointerPos.x * 0.5,
-    x: - pointerPos.y * 0.5,
-    duration: 2
-  })
+    x: -pointerPos.y * 0.5,
+    duration: 2,
+  });
 
   renderer.render(scene, camera);
   requestAnimationFrame(animate);
