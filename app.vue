@@ -38,9 +38,6 @@ export default {
     setPageLoad() {
       this.pageLoaded = true;
     },
-    test(e) {
-      console.log(e.target);
-    },
   },
   setup() {
     const mainStore = useMainStore();
@@ -48,7 +45,6 @@ export default {
   },
   mounted() {
     this.pageLoaded = true;
-    console.log(window);
 
     setTimeout(() => {
       ScrollTrigger.refresh();
@@ -66,15 +62,6 @@ export default {
       ScrollTrigger.refresh();
     }, 20000);
   },
-  // watch: {
-  //   'mainStore.menuVisible': function () {
-  //     if (!this.mainStore.menuVisible) {
-  //       window.addEventListener('click', () => {this.mainStore.toggleMenu})
-  //     } else {
-  //       window.removeEventListener('click', () => {this.mainStore.toggleMenu})
-  //     }
-  //   } 
-  // },
 };
 </script>
 
