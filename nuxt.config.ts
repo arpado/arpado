@@ -8,7 +8,10 @@ export default defineNuxtConfig({
   ],
   modules: [
     '@pinia/nuxt',
-    '@nuxtjs/tailwindcss'
+    '@nuxtjs/tailwindcss',
+    '@vueuse/nuxt',
+    '@nuxt/content',
+    '@nuxtjs/fontaine'
   ],
   build: {
     transpile: ['gsap']
@@ -16,6 +19,11 @@ export default defineNuxtConfig({
   alias: {
     pinia: "/node_modules/@pinia/nuxt/node_modules/pinia/dist/pinia.mjs"
   },
+  content: {
+    markdown: {
+      anchorLinks: false
+    }
+  }
   // build: {
   //     transpile: [
   //         '@fortawesome/vue-fontawesome',
