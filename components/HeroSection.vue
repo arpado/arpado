@@ -1,26 +1,28 @@
 <template>
   <div class="hero-section h-screen w-screen relative" id="hero">
-    <!-- <div class="content-box" data-augmented-ui="tl-round br-round border both">
-      <h1 class="text-4xl">
+    <div class="content-box" data-augmented-ui="tl-round br-round border both">
+      <h1 class="text-2xl sm:text-4xl text-center w-full">
         Transforming ideas<br />into<br />digital experiences.
       </h1>
-      <p>
-        Hi there!<br />I'm a passionate beginner web developer eager to bring your
-        ideas to life. I specialize in creating responsive, user-friendly
-        websites that are both visually appealing and functional. Whether you're
-        looking to establish your online presence, improve your website's
-        performance, or bring a new project to life, I'm committed to working
-        closely with you to understand your unique needs and deliver a product
-        that exceeds your expectations.<br />Let's build something great together!
-      </p>
-      <div
-        class="cta-btn text-3xl p-4"
-        data-augmented-ui="tl-round br-round border both"
-      >
-        Learn More
+      <div class="my-2">
+        <p>Hi there!</p>
+        <p>
+          I'm a passionate beginner web developer eager to bring your ideas to
+          life. I specialize in creating responsive, user-friendly websites that
+          are both visually appealing and functional.
+        </p>
+        <p>
+          Whether you're looking to establish your online presence, improve your
+          website's performance, or bring a new project to life, I'm committed
+          to working closely with you to understand your unique needs and
+          deliver a product that exceeds your expectations.
+        </p>
+        <p>Let's build something great together!</p>
       </div>
-    </div> -->
+      <ButtonElement text="Learn More" />
+    </div>
     <PlanetSection />
+    <!-- <ButtonElement class="cta-btn text-3xl p-4 mx-auto my-4" id="projects-btn" text="Projects" /> -->
   </div>
 </template>
 
@@ -44,19 +46,21 @@ export default {
   height: 100vh; */
   /* background-color: black; */
   /* position: relative; */
-  overflow: hidden;
+  /* overflow: hidden; */
+  text-shadow: 0 0 2px white;
 }
 .content-box {
-  width: 500px;
-  height: 500px;
-  max-width: 80vw;
+  height: fit-content;
+  min-height: 500px;
+  width: 600px;
+  max-width: 90vw;
   /* max-height: fit-content; */
   /* border: 1px solid white; */
   position: absolute;
-  top: 50%;
-  left: 0%;
-  transform: translate(25%, -50%);
-  background-color: rgba(0, 0, 0, 0.7);
+  top: calc(50% + 42px);
+  left: 50%;
+  transform: translate(-50%, -50%);
+  /* background-color: rgba(0, 0, 0, 0.7); */
   color: white;
   display: flex;
   flex-direction: column;
@@ -64,42 +68,27 @@ export default {
   align-items: flex-start;
   -webkit-text-stroke: 0.3px black;
   z-index: 9;
-  padding: 2rem;
+  padding: 1rem;
+  margin: 0 auto;
   /* --aug-border-bottom: 20px;
   --aug-br-inset1: 200px;
   --aug-br-inset2: 10px;
   --aug-br: 20px;
   --aug-inlay-all: 10px; */
+  --aug-inlay-bg: var(--panelbgLightTopLeft);
+  --aug-inlay-opacity: 0.7;
 }
-.text-box,
-.cta-btn {
+.text-box {
   display: flex;
   justify-content: center;
   align-items: center;
   /* padding: 2rem 0.5rem; */
 }
 .text-box {
-  font-size: 3rem;
+  /* font-size: 3rem; */
   /* line-height: 0; */
 }
-.cta-btn {
-  /* margin-top: 100px; */
-  height: 100px;
-  width: 200px;
-  font-size: 2rem;
-  box-shadow: 0 0 10px 0px black;
-  text-decoration-style: none;
-  /* color: black;
-    background-color: yellow;
-    border-radius: 5px; */
-}
-/* .cta-btn:hover {
-    cursor: pointer;
-    box-shadow: 0 0 20px 2px yellow;
-}
-.cta-btn > p {
-  text-align: center;
-} */
+
 .animate-in {
   opacity: 0;
 }
@@ -124,14 +113,28 @@ export default {
   font-family: "Orbitron";
   font-size: 2.5rem;
 }
-@media (min-width: 600px) {
-  /* .content-box {
+#projects-btn {
+  position: absolute;
+  bottom: 0px;
+  left: 50%;
+  transform: translateX(-50%);
+  margin: 0;
+}
+@media (min-width: 768px) {
+  .content-box {
     position: absolute;
-    top: 25%;
-    right: 10%;
-  } */
+    /* top: 50%; */
+    left: 0%;
+    transform: translate(25%, -50%);
+    padding: 2rem;
+  }
   #hexagon-1 {
     left: -15rem;
+  }
+}
+@media (min-width: 1600px) {
+  .content-box {
+    transform: translate(15vw, -50%);
   }
 }
 </style>
