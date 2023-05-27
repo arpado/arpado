@@ -23,7 +23,11 @@ export default defineNuxtConfig({
     markdown: {
       anchorLinks: false
     }
-  }
+  },
+  mode: 'static',
+  router: {
+     base: '/arpado.github.io/'
+  },
   // build: {
   //     transpile: [
   //         '@fortawesome/vue-fontawesome',
