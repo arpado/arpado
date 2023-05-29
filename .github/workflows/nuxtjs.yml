@@ -23,6 +23,9 @@ permissions:
 concurrency:
   group: "pages"
   cancel-in-progress: false
+  
+env:
+  BUILD_FOLDER: .output/public
 
 jobs:
   # Build job
