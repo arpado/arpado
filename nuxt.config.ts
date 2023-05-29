@@ -24,14 +24,18 @@ export default defineNuxtConfig({
       anchorLinks: false
     }
   },
-  ssr: false,
-  mode: 'static',
-  router: {
-     base: '/arpado.github.io/'
-  },
-  generator:{
-    nojekyll:true
-  },
+
+  // github pages stuff
+  // ssr: false,
+  // mode: 'static',
+  // router: {
+  //    base: '/arpado.github.io/'
+  // },
+  // generator:{
+  //   nojekyll:true
+  // },
+
+  // other stuff
   // build: {
   //     transpile: [
   //         '@fortawesome/vue-fontawesome',
