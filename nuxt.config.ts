@@ -28,6 +28,9 @@ export default defineNuxtConfig({
   router: {
      base: '/arpado.github.io/'
   },
+  generator:{
+    nojekyll:true
+  },
   // build: {
   //     transpile: [
   //         '@fortawesome/vue-fontawesome',
