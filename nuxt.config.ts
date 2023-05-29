@@ -24,6 +24,7 @@ export default defineNuxtConfig({
       anchorLinks: false
     }
   },
+  ssr: false,
   mode: 'static',
   router: {
      base: '/arpado.github.io/'
