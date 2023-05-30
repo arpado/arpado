@@ -214,7 +214,7 @@ export default {
   width: 100vw;
   min-height: 90vh;
   background-color: black;
-  background-image: url("images/black-sand-bg.jpeg");
+  background-image: url("/src/images/black-sand-bg.jpeg");
   background-repeat: no-repeat;
   background-size: cover;
   display: flex;
