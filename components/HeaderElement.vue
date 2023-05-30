@@ -2,15 +2,20 @@
   <div class="outer-container">
     <div class="inner-container">
       <LogoElement />
-      <VerticalMenu />
+      <VerticalMenu v-if="width < 768" />
+      <HorizontalMenu v-else />
     </div>
   </div>
 </template>
 
-<script>
-import LogoElement from './LogoElement.vue'
-import VerticalMenu from './VerticalMenu.vue'
-export default {};
+<script setup>
+import { useWindowSize } from "@vueuse/core";
+
+const { width, height } = useWindowSize();
+
+// import LogoElement from './LogoElement.vue'
+// import VerticalMenu from './VerticalMenu.vue'
+// export default {};
 </script>
 
 <style scoped>
