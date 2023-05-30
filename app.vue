@@ -101,6 +101,7 @@ body {
   overflow-x: hidden;
   font-family: "Times New Roman", Times, serif;
   font-family: "Roboto";
+  /* font-family: "Tangerine"; */
   text-shadow: 0 0 5px black;
   background: black;
   background-image: url("/src/images/bg-stars.jpg");
