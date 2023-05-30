@@ -26,6 +26,19 @@
         "repo": "https://github.com/arpado/suleiman-scout-landing-page"
     },
     {
+        "name": "Brath's Landing Page",
+        "description": "/brath-description",
+        "details": "/brath-details",
+        "image": "brath.jpg",
+        "thumbnail": "brath.jpg",
+        "size": "6.846.101 bytes",
+        "date": "2022. 08. 06.",
+        "modified": "2022. 08. 06.",
+        "language": "React",
+        "link": "https://metzgermeister.pages.dev/",
+        "repo": "https://github.com/arpado/brath-metzgermeister"
+    },
+    {
         "name": "King's Landing Page",
         "description": "/kings-landing-page-description",
         "details": "/kings-landing-page-details",
