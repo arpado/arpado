@@ -67,7 +67,7 @@ export default {
 
 <style>
 @import "/node_modules/augmented-ui/augmented-ui.min.css";
-@import "/assets/fonts/fonts.css";
+/* @import "/assets/fonts/fonts.css"; */
 
 * {
   margin: 0;
