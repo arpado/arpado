@@ -24,6 +24,7 @@ export default defineNuxtConfig({
       anchorLinks: false
     }
   },
+  rootDir: __dirname,
   // app: {
   //   baseURL: '/arpado.github.io/'
   // }
