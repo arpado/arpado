@@ -265,8 +265,8 @@ onMounted(() => {
   animate();
 });
 const animate = () => {
-  planet.rotation.y += 0.02;
-  planetGroup.rotation.y += 0.02;
+  planet.rotation.y += 0.01;
+  planetGroup.rotation.y += 0.01;
   gsap.to(masterGroup.rotation, {
     y: pointerPos.x * 0.5,
     x: -pointerPos.y * 0.5,
