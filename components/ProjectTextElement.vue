@@ -238,16 +238,18 @@ export default {
   font-size: 2rem;
 } */
 .background-numbers {
+  width: fit-content;
   font-size: 2.3rem;
   font-weight: bold;
   opacity: 0.3;
   line-height: normal;
   position: absolute;
-  bottom: 1rem;
+  bottom: 0.5rem;
   right: 260px;
   /* left: 0rem; */
   /* transform: rotateZ(315deg); */
 }
+
 .selected {
   z-index: 10;
 }
@@ -342,7 +344,7 @@ export default {
     right: 8rem;
   }
   .background-numbers {
-    font-size: 6rem;
+    font-size: 5rem;
     bottom: 0;
     left: 1rem;
     transform: rotateZ(0deg);
@@ -377,6 +379,26 @@ export default {
   .website-btn {
     --aug-tl: 70px;
     transform: translateX(0px);
+  }
+}
+@media (min-width: 550px){
+  .background-numbers {
+    font-size: 6rem;
+  }
+}
+@media (min-width: 1024px){
+  .background-numbers {
+    font-size: 4rem;
+  }
+}
+@media (min-width: 1075px){
+  .background-numbers {
+    font-size: 5rem;
+  }
+}
+@media (min-width: 1150px){
+  .background-numbers {
+    font-size: 6rem;
   }
 }
 </style>
