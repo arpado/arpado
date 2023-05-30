@@ -24,6 +24,9 @@ export default defineNuxtConfig({
       anchorLinks: false
     }
   },
+  app: {
+    baseURL: '/arpado.github.io/'
+  }
 
   // github pages stuff
   // ssr: false,
