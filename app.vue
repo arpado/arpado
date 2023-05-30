@@ -211,6 +211,45 @@ p {
 .textbox > p {
   margin-top: 10px;
 }
+/* button anim */
+.button-anim {
+text-shadow: 0 0 0px var(--mainYellow);
+  transition: 0.5s;
+}
+.button-anim:hover {
+  text-shadow: 0 0 7px rgba(233, 220, 121, 0.5);
+  /* background: rgb(162, 145, 24); */
+  /* --aug-border-bg: linear-gradient(
+    135deg,
+    rgba(162, 145, 24, 1) 0%,
+    rgba(162, 145, 24, 1) 40%,
+    rgba(233, 220, 121, 1) 50%,
+    rgba(162, 145, 24, 1) 60%,
+    rgba(162, 145, 24, 1) 100%
+  ); */
+  /* animation: animate-bg 3s; */
+}
+.button-anim:hover::after {
+   background: linear-gradient(
+    135deg,
+    rgba(162, 145, 24, 1) 0%,
+    rgba(162, 145, 24, 1) 40%,
+    rgba(233, 220, 121, 1) 50%,
+    rgba(162, 145, 24, 1) 60%,
+    rgba(162, 145, 24, 1) 100%
+  );
+  background-size: 300%;
+  animation: animate-bg 3s;
+  animation-play-state: running;
+}
+@keyframes animate-bg {
+  from {
+    background-position: left;
+  }
+  to {
+    background-position: right;
+  }
+}
 @media (min-width: 768px) {
   h1 {
     font-size: 2rem;

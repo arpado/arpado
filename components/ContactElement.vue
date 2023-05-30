@@ -93,7 +93,7 @@
           <!-- <ButtonElement  text="Send Message" type="submit" /> -->
           <button
             type="submit"
-            class="submit-button"
+            class="submit-button button-anim"
             data-augmented-ui="tl-clip tr-clip br-clip bl-clip both"
           >
             Send Message

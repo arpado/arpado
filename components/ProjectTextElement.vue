@@ -45,7 +45,7 @@
       <a
         :href="page.repo"
         target="_blank"
-        class="button github-btn"
+        class="button button-anim github-btn"
         :data-augmented-ui="getGitButtonStyle"
       >
         <span>GitHub</span>
@@ -53,7 +53,7 @@
       <a
         :href="page.link"
         target="_blank"
-        class="button website-btn"
+        class="button button-anim website-btn"
         data-augmented-ui="tl-clip tr-clip br-clip both"
       >
         <span>Website</span>
@@ -277,46 +277,8 @@ export default {
   color: var(--mainYellow);
   --aug-inlay-bg: #2a2615;
   font-weight: bold;
-  text-shadow: 0 0 0px var(--mainYellow);
-  transition: 0.5s;
-  
 }
-.details-btn:hover,
-.description-btn:hover,
-.button:hover {
-  text-shadow: 0 0 7px rgba(233, 220, 121, 0.5);
-  /* background: rgb(162, 145, 24); */
-  /* --aug-border-bg: linear-gradient(
-    135deg,
-    rgba(162, 145, 24, 1) 0%,
-    rgba(162, 145, 24, 1) 40%,
-    rgba(233, 220, 121, 1) 50%,
-    rgba(162, 145, 24, 1) 60%,
-    rgba(162, 145, 24, 1) 100%
-  ); */
-  /* animation: animate-bg 3s; */
-}
-.button:hover::after {
-   background: linear-gradient(
-    135deg,
-    rgba(162, 145, 24, 1) 0%,
-    rgba(162, 145, 24, 1) 40%,
-    rgba(233, 220, 121, 1) 50%,
-    rgba(162, 145, 24, 1) 60%,
-    rgba(162, 145, 24, 1) 100%
-  );
-  background-size: 300%;
-  animation: animate-bg 3s;
-  animation-play-state: running;
-}
-@keyframes animate-bg {
-  from {
-    background-position: left;
-  }
-  to {
-    background-position: right;
-  }
-}
+
 .github-btn {
   /* --aug-tl: 15px;
   --aug-br: 70px;
