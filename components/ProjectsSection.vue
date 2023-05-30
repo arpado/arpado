@@ -18,7 +18,7 @@
       <div class="image-placeholder flex place-content-center">
         <img
           class="project-img"
-          src="@/public/images/pizza-parallax-3.jpg"
+          src="/images/pizza-parallax-3.jpg"
           alt=""
         />
       </div>
@@ -29,7 +29,7 @@
       ref="project-2"
     >
       <div class="image-placeholder">
-        <img class="project-img" src="@/public/images/suliman.jpg" alt="" />
+        <img class="project-img" src="/images/planetarium.jpg" alt="" />
       </div>
       <ProjectTextElement
         :page="pages[1]"
