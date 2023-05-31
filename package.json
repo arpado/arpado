@@ -14,7 +14,7 @@
     "@nuxtjs/fontaine": "^0.2.5",
     "@nuxtjs/tailwindcss": "^6.6.6",
     "gh-pages": "^5.0.0",
-    "nuxt": "^3.0.0-rc.14"
+    "nuxt": "3.4.*"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.2.0",
@@ -28,7 +28,6 @@
     "augmented-ui": "^2.0.0",
     "dat.gui": "^0.7.9",
     "gsap": "^3.11.1",
-    "nuxt3": "^3.4.2-28026172.8aa86559",
     "swiper": "^9.2.4",
     "three": "^0.151.3",
     "vite-plugin-string": "^1.2.1",
