@@ -1,0 +1,56 @@
+[
+    {
+        "question": "What sparked your interest in web development, and how did you acquire your programming skills?",
+        "answer": {
+            "para1": "I began my journey into web development during the early 2000s, right before high school. During my time in high school, I delved into the fundamentals of programming and algorithms. When the time came to apply to university, I faced a decision between social studies and computer sciences, ultimately choosing the former path.",
+            "para2": "However, I soon realized that this career choice wasn't aligned with my aspirations, prompting me to consider a career switch. It was during the lockdown in 2020 that I seized the opportunity to reignite my passion for coding and embarked on a dedicated learning journey once again."
+        }
+    },
+    {
+        "question": "What did you learn and how did you acquire your programming skills?",
+        "answer": {
+            "para1": "My primary focus has been on JavaScript, which I have extensively studied and practiced. Additionally, I have acquired knowledge in PHP, SQL, and PostgreSQL.",
+            "para2": "Alongside programming languages, I have developed a strong understanding of HTML and CSS, which are essential components of web development. To acquire these programming skills, I have pursued various learning resources and platforms. I have taken advantage of Udemy courses, followed educational tutorials on YouTube, referred to programming books and documentations, engaged in discussions on forums, and made use of learning platforms such as The Odin Project and FreeCodeCamp. These diverse sources have provided me with a well-rounded education and practical experience in web development."
+        }
+    },
+    {
+        "question": "Do you have a degree in CS?",
+        "answer": {
+            "para1": "No, I do not have a degree in Computer Science. However, I hold two degrees in fields related to social studies, which, in this context, may not directly apply.",
+            "para2": "Nevertheless, these degrees have equipped me with valuable skills that are transferable to the field of web development. During my university years, I honed my abilities to study effectively, conduct thorough research, break down complex problems into manageable parts, handle long-term projects, and collaborate both independently and within a group or team setting.",
+            "para3": "These skills have proven instrumental in my learning and professional growth, allowing me to adapt and succeed in various environments."
+        }
+    },
+    {
+        "question": "Do you have any experience with front-end frameworks or technologies?",
+        "answer": {
+            "para1": "Yes, I have extensive experience with front-end frameworks and technologies. In terms of JavaScript, my main focus and deep understanding lie in Vue3. Additionally, I am proficient in utilizing Nuxt3 and the Vue ecosystem (Router, Pinia, VueUse, etc.). While my knowledge of React is basic, I am familiar with its concepts. I have been working with jQuery too.",
+            "para2": "Regarding CSS frameworks, I am well-versed in working with Tailwind CSS and Bootstrap. I also have some familiarity with Bulma and Materialize.",
+            "para3": "In addition to these frameworks, I am proficient in utilizing a variety of other libraries. Some examples include Three.js for 3D graphics, Swiper.js for sliders, Axios for making HTTP requests, and lesser-known libraries like AugmentedUI and Matter.js.",
+            "para4": "Overall, my experience with front-end frameworks and technologies encompasses a broad range of tools, enabling me to adapt and utilize the most suitable options for each project."
+        }
+    },
+    {
+        "question": "Do you have any experience with back-end technologies?",
+        "answer": {
+            "para1": "Yes, I do have some experience with back-end technologies and databases, although it is limited. I am knowledgeable in writing data queries using SQL and have worked with more advanced functions using PostgreSQL. In one of my projects, I utilized Prisma as a client, but due to limitations in free hosting options with back-end functionality, I had to explore alternative approaches. As a result, I have leaned towards using Backend as a Service providers such as Firebase, which is a NoSQL provider managed by Google. Additionally, I have discovered Supabase, an SQL-based provider, which I have also utilized.",
+            "para2": "One project that stands out in terms of its complex back-end implementation is the Pizza-Parallax website (as mentioned above in the Projects section). This project involved developing an intricate authentication system with assigned roles, as well as managing tables for product data and order data. It showcased a fully functional back-end that facilitated seamless operations for the website."
+        }
+    },
+    {
+        "question": "Are you familiar with version control systems such as Git?",
+        "answer": {
+            "para1": "Yes, I am indeed familiar with version control systems such as Git, including the functionality of platforms like GitHub. I use Git on a daily basis and possess knowledge of various commands, such as adding, committing, pulling, and pushing changes. I am adept at creating branches and restoring previous versions of code when needed.",
+            "para2": "Furthermore, I utilize GitHub as a repository to store my projects and leverage platforms like Netlify and Cloudflare for hosting them directly from my GitHub repository.",
+            "para3": "While I have some exposure to collaborating with team members on GitHub projects, my experience in this area is limited. However, I have a basic understanding of concepts related to working together on a project using GitHub, as well as a general familiarity with Continuous Integration/Continuous Deployment (CI/CD) practices."
+        }
+    },
+    {
+        "question": "How do you ensure the quality and maintainability of your code? Are you familiar with any testing frameworks or methodologies?",
+        "answer": {
+            "para1": "Yes, I am well acquainted with the concept of testing, including its methodologies and purposes. I have experience using testing frameworks such as Jest and Vitest for performing unit tests. While my knowledge in this area is strong, I have yet to delve into implementing end-to-end (E2E) testing, although I have a basic understanding of it.",
+            "para2": "Additionally, I have collaborated with others to establish an automated test environment for the Pizza-Parallax project, leveraging the capabilities of GitHub repositories.",
+            "para3": "Overall, I am equipped with the necessary knowledge and practical experience to conduct unit testing using frameworks like Jest and Vitest, and I have an understanding of the importance of automated testing practices in software development."
+        }
+    }
+]
