@@ -9,12 +9,6 @@
       class="project-slide-in-1 featured-project flex justify-center gap-12 w-11/12 my-4 mx-auto"
       ref="project-1"
     >
-      <ProjectTextElement
-        :page="pages[0]"
-        :pagesArr="pages"
-        :number="0"
-        :startFrom="1"
-      />
       <div class="image-placeholder flex place-content-center">
         <img
           class="project-img"
@@ -22,6 +16,12 @@
           alt=""
         />
       </div>
+      <ProjectTextElement
+        :page="pages[0]"
+        :pagesArr="pages"
+        :number="0"
+        :startFrom="1"
+      />
     </div>
 
     <div
@@ -43,12 +43,6 @@
       class="project-slide-in-3 projects-rest-container flex justify-center gap-12 w-11/12 my-4 mx-auto"
       ref="project-3"
     >
-      <ProjectTextElement
-        :page="pages[activeDescription]"
-        :pagesArr="shortenPages"
-        :number="activeDescription"
-        :startFrom="3"
-      />
       <!-- @slideChange="onSlideChange" -->
       <!-- :options="swiperOption" -->
       <Swiper
@@ -73,6 +67,12 @@
           <img class="project-img" :src="getPic(page)" alt="" />
         </SwiperSlide>
       </Swiper>
+      <ProjectTextElement
+        :page="pages[activeDescription]"
+        :pagesArr="shortenPages"
+        :number="activeDescription"
+        :startFrom="3"
+      />
     </div>
   </section>
 </template>
@@ -292,8 +292,15 @@ hr {
 @media (min-width: 1024px) {
   .featured-project,
   .projects-rest-container {
-    flex-direction: row;
+    /* flex-direction: row; */
   }
+  .project-slide-in-1,
+.project-slide-in-3 {
+  flex-direction: row-reverse;
+}
+.project-slide-in-2 {
+  flex-direction: row;
+}
 }
 
 /* .text-placeholder {
