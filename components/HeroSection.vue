@@ -48,6 +48,11 @@ export default {
   /* position: relative; */
   /* overflow: hidden; */
   text-shadow: 0 0 2px white;
+  background-image: url("/src/images/bg-stars.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
 }
 .content-box {
   height: fit-content;
