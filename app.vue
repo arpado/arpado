@@ -4,7 +4,7 @@
       <HeaderElement />
       <HeroSection />
       <ProjectsSection />
-      <ContactElement />
+      <PersonalSection />
       <FooterElement />
       <ModalView />
     </div>
@@ -103,12 +103,11 @@ body {
   font-family: "Roboto";
   text-shadow: 0 0 5px black;
   background: black;
-  background-image: url("/src/images/bg-stars.jpg");
-  /* background-image: url("/images/black-sand-bg.jpeg"); */
+  /* background-image: url("/src/images/bg-stars.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
-  background-position: center;
+  background-position: center; */
 }
 a {
   color: var(--mainYellow);
@@ -119,7 +118,7 @@ h1, h2, h3 {
   font-size: 1.3rem;
 }
 p {
-  margin-top: 20px;
+  margin: 20px auto;
 }
 .section-unit {
   width: 100vw;
