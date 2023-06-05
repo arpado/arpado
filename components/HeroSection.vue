@@ -5,7 +5,11 @@
         Transforming ideas<br />into<br />digital experiences.
       </h1>
       <div class="my-2">
-        <p>Hi there!</p>
+        <p>How you want to deliver that value?</p>
+        <p>enchance your virtual presence with skillfully crafted websites</p>
+        <p>Hi my name is Arpad and I craft websites with care and love.</p>
+        <!-- <p>Crafted lines of code, <br />Worldwide presence established,<br /> Digital success.</p> -->
+        <!-- <p>Hi there!</p>
         <p>
           I'm a passionate beginner web developer eager to bring your ideas to
           life. I specialize in creating responsive, user-friendly websites that
@@ -17,9 +21,27 @@
           to working closely with you to understand your unique needs and
           deliver a product that exceeds your expectations.
         </p>
-        <p>Let's build something great together!</p>
+        <p>Let's build something great together!</p> -->
       </div>
-      <ButtonElement text="Learn More" />
+      
+      <!-- <ButtonElement text="Learn More" /> -->
+
+      <div class="btn-container flex mx-auto">
+        <a
+          href="#about"
+          class="button button-anim about-btn"
+          data-augmented-ui="tl-clip tr-clip br-clip bl-clip both"
+        >
+          <span>About me</span>
+        </a>
+        <a
+          href="#projects"
+          class="button button-anim projects-btn"
+          data-augmented-ui="tl-clip tr-clip br-clip bl-clip both"
+        >
+          <span>My projects</span>
+        </a>
+      </div>
     </div>
     <PlanetSection />
     <!-- <ButtonElement class="cta-btn text-3xl p-4 mx-auto my-4" id="projects-btn" text="Projects" /> -->
@@ -28,6 +50,7 @@
 
 <script>
 import gsap from "gsap";
+import { useWindowSize } from "@vueuse/core";
 
 export default {
   mounted() {
@@ -124,6 +147,60 @@ export default {
   left: 50%;
   transform: translateX(-50%);
   margin: 0;
+}
+.btn-container {
+  flex-direction: column;
+}
+.button {
+  width: 190px;
+  height: 70px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  /* --aug-tl: 45px; */
+  cursor: pointer;
+  color: var(--mainYellow);
+  font-size: 1.3rem;
+  font-weight: bold;
+  --aug-inlay-bg: #2a2615;
+  margin-top: 20px;
+}
+.about-btn {
+  --aug-br: initial;
+  transform: translateX(0px);
+}
+.about-btn > span {
+  transform: translateX(0px);
+}
+.projects-btn {
+  --aug-tl: initial;
+  transform: translateX(0px);
+}
+.projects-btn > span {
+  transform: translateX(0px);
+}
+
+@media (min-width: 480px) {
+  .btn-container {
+    flex-direction: row;
+  }
+  .about-btn {
+    --aug-br: 70px;
+    --aug-tr: 0px;
+    transform: translateX(30px);
+  }
+  .about-btn > span {
+    transform: translateX(-15px);
+  }
+  .projects-btn {
+    --aug-bl: 0px;
+    --aug-tl: 70px;
+    transform: translateX(-30px);
+  }
+  .projects-btn > span {
+    transform: translateX(15px);
+  }
 }
 @media (min-width: 768px) {
   .content-box {
