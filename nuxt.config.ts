@@ -25,6 +25,16 @@ export default defineNuxtConfig({
     }
   },
   rootDir: __dirname,
+  app: {
+    head: {
+      title: "ArpadO's Portfolio Page",
+      meta: [
+        { charset: 'utf-8' },
+        { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+        { name: 'description', content: "ArpadO's Personal Portfolio Page." }
+      ],
+    }
+  }
   // app: {
   //   baseURL: '/arpado.github.io/'
   // }
