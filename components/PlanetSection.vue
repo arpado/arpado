@@ -112,7 +112,7 @@ const textureLoader = new TextureLoader();
 // scene.add( axesHelper );
 
 const planet = new Mesh(
-  new SphereGeometry(0.75, 20, 20),
+  new SphereGeometry(0.75, 50, 50),
   // new MeshStandardMaterial({ color: 0x008080, /* map: textureLoader.load(earth) */ }),
   new ShaderMaterial({
     vertexShader,
@@ -135,7 +135,7 @@ scene.add(masterGroup);
 // planet.receiveShadow = true;
 
 const moon = new Mesh(
-  new SphereGeometry(0.15, 10, 10),
+  new SphereGeometry(0.15, 30, 30),
   new MeshBasicMaterial({
     /*color: 0x008080,*/ map: textureLoader.load(moonMap),
   })
@@ -155,7 +155,7 @@ moon.position.x = 3;
 // moon.receiveShadow = true;
 
 const atmosphere = new Mesh(
-  new SphereGeometry(0.75, 20, 20),
+  new SphereGeometry(0.75, 50, 50),
   // new MeshBasicMaterial({ color: 0x008080, map: textureLoader.load(earth) }),
   new ShaderMaterial({
     // uniforms: uniforms,
@@ -265,8 +265,8 @@ onMounted(() => {
   animate();
 });
 const animate = () => {
-  planet.rotation.y += 0.01;
-  planetGroup.rotation.y += 0.01;
+  planet.rotation.y += 0.005;
+  planetGroup.rotation.y += 0.005;
   gsap.to(masterGroup.rotation, {
     y: pointerPos.x * 0.5,
     x: -pointerPos.y * 0.5,
