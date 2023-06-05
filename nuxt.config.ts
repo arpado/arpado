@@ -33,6 +33,7 @@ export default defineNuxtConfig({
         { name: 'viewport', content: 'width=device-width, initial-scale=1' },
         { name: 'description', content: "ArpadO's Personal Portfolio Page." }
       ],
+      link: [{ rel: 'icon', type: 'image/png', href: 'favicon/favicon.ico' }]
     }
   }
   // app: {
