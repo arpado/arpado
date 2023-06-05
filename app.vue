@@ -120,6 +120,9 @@ h1, h2, h3 {
 p {
   margin: 20px auto;
 }
+.main-container {
+  overflow-x: hidden;
+}
 .section-unit {
   width: 100vw;
   height: 100vh;
