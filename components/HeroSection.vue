@@ -4,26 +4,21 @@
       <h1 class="text-2xl sm:text-4xl text-center w-full">
         Transforming ideas<br />into<br />digital experiences.
       </h1>
-      <div class="my-2">
-        <p>How you want to deliver that value?</p>
-        <p>enchance your virtual presence with skillfully crafted websites</p>
-        <p>Hi my name is Arpad and I craft websites with care and love.</p>
+      <div class="my-4 mx-2 md:text-lg">
+        <p>
+          Elevate your online presence with expertly crafted, captivatingly
+          animated, and seamlessly responsive websites that forge meaningful
+          connections between you, your product, and the audience you value
+          most!
+        </p>
+        <p>
+          I'm here to assist you in achieving your goals! Would you like to
+          explore further? Feel free to click on the buttons below for more
+          information!
+        </p>
         <!-- <p>Crafted lines of code, <br />Worldwide presence established,<br /> Digital success.</p> -->
-        <!-- <p>Hi there!</p>
-        <p>
-          I'm a passionate beginner web developer eager to bring your ideas to
-          life. I specialize in creating responsive, user-friendly websites that
-          are both visually appealing and functional.
-        </p>
-        <p>
-          Whether you're looking to establish your online presence, improve your
-          website's performance, or bring a new project to life, I'm committed
-          to working closely with you to understand your unique needs and
-          deliver a product that exceeds your expectations.
-        </p>
-        <p>Let's build something great together!</p> -->
       </div>
-      
+
       <!-- <ButtonElement text="Learn More" /> -->
 
       <div class="btn-container flex mx-auto">

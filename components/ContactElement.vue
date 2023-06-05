@@ -12,7 +12,7 @@
         type="text"
         name="form_name"
         id="form_name"
-        placeholder="Hi, I'm Arpad, what is your name?"
+        placeholder="...by which I may refer you."
         v-model="name"
       />
 
@@ -22,31 +22,34 @@
         type="email"
         name="form_email"
         id="form_email"
-        placeholder="So that I may reply..."
+        placeholder="...where I may send my reply to."
         v-model="email"
       />
 
-      <label for="form_subject">Email Subject:</label>
+      <label for="form_subject">Subject:</label>
       <input
         class="message-input"
         type="text"
         name="form_subject"
         id="form_subject"
+        placeholder="...of the email you wish to send."
         v-model="subject"
       />
 
-      <label for="form_message">Message Body:</label>
+      <label for="form_message">Message:</label>
       <textarea
         class="message-input"
         name="message"
         id="form_message"
         cols="30"
         rows="10"
+        placeholder="...question, opinion ot anything else you wish to share. Thank you for your feedback!"
         v-model="message"
       ></textarea>
 
       <!-- <input type="submit" value="Send Message"> -->
       <!-- <ButtonElement  text="Send Message" type="submit" /> -->
+      <div class="flex justify-center">
       <button
         type="submit"
         class="submit-button button-anim"
@@ -54,6 +57,7 @@
       >
         Send Message
       </button>
+      </div>
       <!-- @click.prevent="submitForm" -->
       <!-- class="submit-btn yellow-btn" -->
       <!-- @click="submitForm" -->
@@ -113,23 +117,23 @@ export default {
 
 <style scoped>
 h2 {
-  margin-bottom: 20px;
+  /* margin-bottom: 20px; */
 }
 hr {
   width: 50%;
-  margin: 10px auto;
+  margin: 20px auto;
 }
 form {
   margin: auto;
 }
 label {
-  margin-top: 10px;
+  margin-top: 20px;
 }
 input,
 textarea {
   /* width: 300px; */
   width: 100%;
-  margin: 10px 0 15px;
+  margin: 10px 0 30px;
   padding: 0.3rem;
   color: black;
   border-radius: 5px;
@@ -138,6 +142,7 @@ textarea {
   /* height: 100px; */
   min-width: 200px;
   width: 100%;
+  max-width: 200px;
   /* max-width: 400px; */
   padding: 0.75rem 1rem;
   margin: 20px auto;
