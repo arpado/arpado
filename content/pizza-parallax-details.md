@@ -2,7 +2,7 @@
 title: Pizza Parallax Details
 ---
 
-### Pizza Parallax
+### Pizza Parallax (work in progress)
 
 The front-end of the website is built using Nuxt3, utilizing server-side rendering and incorporating routing and layouts. It also utilizes the Pinia store for state management. The animations on the website are created using GSAP. Additionally, I intend to incorporate a reviews section using SwiperJS.
 
